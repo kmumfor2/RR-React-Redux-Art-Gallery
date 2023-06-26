@@ -42,4 +42,9 @@ function App(props) {
 
 const mapStateToProps = (state, ownProps) => ({ objectId: state.data.objectId })
 
+useEffect(() => {
+  dispatch(fetchData())
+}, [props.objectId, dispatch])
+
+
 export default connect(mapStateToProps)(App);
